@@ -46,7 +46,7 @@ Reconstruction ← Core Decoder (g_s) ← PQF + Context Model ← Hyper Decoder 
    - Progressive multi-scale feature extraction
 
 2. **DWAN Attention** - Replaces traditional importance attention
-   - Discrete Wavelet Transform-based channel attention
+   - Dual Wavelet Transform-based channel attention
    - Frequency-aware feature selection
    - Spectral band importance weighting
 
@@ -106,7 +106,7 @@ graph TD
 ### Component Legend
 - **LN**: LayerNorm + PReLU (Lightweight normalization replacing GDN/IGDN)
 - **HCNN**: Hierarchical CNN with MBConv blocks
-- **DWAN**: Discrete Wavelet Attention Network
+- **DWAN**: Dual Wavelet Attention Network
 - **PQF**: Post-Quantization Filter with wavelet refinement
 - **C_m**: Context Model (SSM-based local+global fusion)
 
