@@ -86,15 +86,21 @@ graph TD
     L --> M["Core Decoder (gₛ)"]
     M --> N["Reconstruction (x̂)"]
 
-    style A fill:#f5f5dc,stroke:#333,stroke-width:1px
-    style B fill:#ffd580,stroke:#333,stroke-width:1px
-    style C fill:#c0e6ff,stroke:#333,stroke-width:1px
-    style D fill:#e5e5e5,stroke:#333,stroke-width:1px
-    style E fill:#ffd580,stroke:#333,stroke-width:1px
-    style J fill:#ffd580,stroke:#333,stroke-width:1px
-    style K fill:#ffe4b5,stroke:#333,stroke-width:1px
-    style M fill:#ffd580,stroke:#333,stroke-width:1px
-    style N fill:#f5f5dc,stroke:#333,stroke-width:1px
+    %% Apply black background and white text to all nodes
+    style A fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style B fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style C fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style D fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style E fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style F fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style G fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style H fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style I fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style J fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style K fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style L fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style M fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
+    style N fill:#000000,stroke:#333,stroke-width:1px,color:#ffffff
 ```
 
 ### Component Legend
