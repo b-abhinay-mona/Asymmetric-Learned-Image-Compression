@@ -68,22 +68,24 @@ Reconstruction ← Core Decoder (g_s) ← PQF + Context Model ← Hyper Decoder 
 ---
 
 ## 📐 Architecture Diagram
+
+```mermaid
 graph TD
-    A[Input Image (x)] --> B[Core Encoder (gₐ)]
-    B --> C[DWAM Attention Map]
-    C --> D[Masked Latent (ỹ)]
-    D --> E[Hyper Encoder (hₐ)]
-    E --> F[Quantization (Q)]
-    F --> G[Arithmetic Encoder (AE)]
-    G --> H[Bits]
-    H --> I[Arithmetic Decoder (AD)]
-    I --> J[Hyper Decoder (hₛ)]
-    J --> K[Context Model (cₘ)]
-    D --> L[Quantized Latent (ỹ̂)]
+    A["Input Image (x)"] --> B["Core Encoder (gₐ)"]
+    B --> C["DWAM Attention Map"]
+    C --> D["Masked Latent (ỹ)"]
+    D --> E["Hyper Encoder (hₐ)"]
+    E --> F["Quantization (Q)"]
+    F --> G["Arithmetic Encoder (AE)"]
+    G --> H["Bits"]
+    H --> I["Arithmetic Decoder (AD)"]
+    I --> J["Hyper Decoder (hₛ)"]
+    J --> K["Context Model (cₘ)"]
+    D --> L["Quantized Latent (ỹ̂)"]
     K --> L
-    L --> M[Core Decoder (gₛ)]
-    M --> N[Reconstruction (x̂)]
-    
+    L --> M["Core Decoder (gₛ)"]
+    M --> N["Reconstruction (x̂)"]
+
     style A fill:#f5f5dc,stroke:#333,stroke-width:1px
     style B fill:#ffd580,stroke:#333,stroke-width:1px
     style C fill:#c0e6ff,stroke:#333,stroke-width:1px
@@ -93,8 +95,7 @@ graph TD
     style K fill:#ffe4b5,stroke:#333,stroke-width:1px
     style M fill:#ffd580,stroke:#333,stroke-width:1px
     style N fill:#f5f5dc,stroke:#333,stroke-width:1px
-
-
+```
 
 ### Component Legend
 - **LN**: LayerNorm + PReLU (Lightweight normalization replacing GDN/IGDN)
@@ -104,7 +105,7 @@ graph TD
 - **C_m**: Context Model (SSM-based local+global fusion)
 
 ---
-
+```
 ## 📁 Project Structure
 
 learned_image_compression/
@@ -131,12 +132,13 @@ learned_image_compression/
 - Python 3.10.x is recommened
 1. **Clone the repository**
 git clone ___
-
+```
 2. **Install dependencies**
 
 ### Dependencies (requirements.txt)
 
 # Core packages
+```
 numpy>=1.21.0,<2.0
 pillow>=8.3.0
 matplotlib>=3.5.0
@@ -148,18 +150,18 @@ scikit-image>=0.19.0
 pandas>=2.0.0,<3.0.0
 
 ---
-
+```
 ## 📊 Dataset Preparation
 
 ### Training Datasets
 
 Download and organize datasets in the following structure:
-
+```
 src/data/train/
 ├── flickr/ # Flickr30K dataset
 ├── liu4k/ # Liu4K high-resolution dataset
 └── clic/ # CLIC 2020 training dataset
-
+```
 🖼️ **Note:** All images are rescaled to **384×384** before training.
 
 **Dataset Sources:**
@@ -169,11 +171,11 @@ src/data/train/
 
 ### Test Datasets
 
-
+```
 src/data/test/
 ├── kodak/ # Kodak24 benchmark
 └── clic/ # CLIC test set
-
+```
 **Test Sources:**
 - [Kodak24](http://r0k.us/graphics/kodak/)
 - [CLIC Test](http://compression.cc/)
@@ -304,9 +306,9 @@ Our model achieves **superior rate-distortion trade-offs** compared to:
 ### Loss Function
 
 Rate-distortion optimization with multi-objective scoring:
-
+```
 L = D + λ_RD · R + λ_PQF · L_PQF
-
+```
 where:
 
 D: Distortion (MSE)
