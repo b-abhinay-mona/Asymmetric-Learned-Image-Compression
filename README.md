@@ -6,7 +6,7 @@ A state-of-the-art asymmetric learned image compression model that achieves **ex
 
 ---
 
-## 🎯 Key Achievements
+##  Key Achievements
 
 Our model **outperforms traditional codecs** and competes with state-of-the-art learned compression methods:
 
@@ -19,26 +19,21 @@ Our model **outperforms traditional codecs** and competes with state-of-the-art 
 | **Chen2021** [6] | 402.26s | 2405.14s | 8.6% | 200.99MB |
 | **GLLMM** [16] | 467.90s | 467.90s | -3.13% | 77.08MB (241.03MB) |
 
-### 🏆 Performance Highlights
-- ✅ **BPP ≤ 0.4** consistently across diverse datasets
-- ✅ **SSIM ≥ 0.9** on 90%+ of test images
-- ✅ **PSNR > 34dB** on 89% of test images
-- ✅ **27MB model size** - Most lightweight in class
-- ✅ **~46s total time** (encoding + decoding) - Fast inference
-- ✅ **Outperforms JPEG, JPEG2000, BPG, and VVC** in rate-distortion metrics
+###  Performance Highlights
+-  **BPP ≤ 0.4** consistently across diverse datasets
+-  **SSIM ≥ 0.9** on 90%+ of test images
+-  **PSNR > 34dB** on 89% of test images
+-  **27MB model size** - Most lightweight in class
+-  **~2s total time** (encoding + decoding) - Fast inference
+-  **Outperforms JPEG, JPEG2000, BPG, and VVC** in rate-distortion metrics
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 Our model features an **asymmetric encoder-decoder design** with innovative components:
-Input Image → Core Encoder (g_a) → DWAN Attention → Quantization → Hyper Encoder (h_a)
-↓
-Entropy Model
-↓
-Reconstruction ← Core Decoder (g_s) ← PQF + Context Model ← Hyper Decoder (h_s)
 
-### 🔑 Novel Components
+###  Novel Components
 
 1. **Hierarchical CNN (HCNN)** - Replaces Multi-Scale Residual Blocks (MSRB)
    - Lightweight depthwise separable convolutions
@@ -67,7 +62,7 @@ Reconstruction ← Core Decoder (g_s) ← PQF + Context Model ← Hyper Decoder 
 
 ---
 
-## 📐 Architecture Diagram
+##  Architecture Diagram
 
 ```mermaid
 graph TD
@@ -111,9 +106,9 @@ graph TD
 - **C_m**: Context Model (SSM-based local+global fusion)
 
 ---
-```
-## 📁 Project Structure
 
+##  Project Structure
+```
 learned_image_compression/
 ├── requirements.txt
 ├── README.md
@@ -134,9 +129,13 @@ learned_image_compression/
 │ └── wavelet_layers.py # DWT/IDWT layers
 ├── train.py # Training script
 └── test.py # Evaluation script
+```
 ### Installation
+```
 - Python 3.10.x is recommened
+```
 1. **Clone the repository**
+```
 git clone ___
 ```
 2. **Install dependencies**
@@ -157,7 +156,7 @@ pandas>=2.0.0,<3.0.0
 
 ---
 ```
-## 📊 Dataset Preparation
+##  Dataset Preparation
 
 ### Training Datasets
 
@@ -168,7 +167,7 @@ src/data/train/
 ├── liu4k/ # Liu4K high-resolution dataset
 └── clic/ # CLIC 2020 training dataset
 ```
-🖼️ **Note:** All images are rescaled to **384×384** before training.
+ **Note:** All images are rescaled to **384×384** before training.
 
 **Dataset Sources:**
 - [Flickr30K](http://shannon.cs.illinois.edu/DenotationGraph/)
@@ -188,7 +187,7 @@ src/data/test/
 
 ---
 
-## 🏋️ Training
+##  Training
 
 ### Quick Start Training
 
@@ -207,13 +206,13 @@ NUM_WORKERS = 8
 
 ### Training Features
 
-- ✅ **Multi-objective optimization** (BPP + PSNR + SSIM)
-- ✅ **Gradient accumulation** for effective large batch training
-- ✅ **Mixed precision training** (FP16) for faster convergence
-- ✅ **Automatic checkpointing** with best model selection
-- ✅ **Learning rate scheduling** with exponential decay
-- ✅ **PQF regulation** in early epochs
-- ✅ **Comprehensive logging** with TensorBoard support
+-  **Multi-objective optimization** (BPP + PSNR + SSIM)
+-  **Gradient accumulation** for effective large batch training
+-  **Mixed precision training** (FP16) for faster convergence
+-  **Automatic checkpointing** with best model selection
+-  **Learning rate scheduling** with exponential decay
+-  **PQF regulation** in early epochs
+-  **Comprehensive logging** with TensorBoard support
 
 ### Monitor Training
 
@@ -225,7 +224,7 @@ Training progress is logged to:
 
 ---
 
-## 🧪 Evaluation
+##  Evaluation
 
 ### Run Inference
 
@@ -251,7 +250,7 @@ The model is evaluated on:
 
 ---
 
-## 📈 Results
+##  Results
 
 ### Quantitative Results on Kodak24
 
@@ -266,10 +265,10 @@ The model is evaluated on:
 ### Rate-Distortion Performance
 
 Our model achieves **superior rate-distortion trade-offs** compared to:
-- ✅ JPEG (traditional)
-- ✅ JPEG2000 (wavelet-based)
-- ✅ BPG (HEVC-based)
-- ✅ VVC (latest video codec)
+-  JPEG (traditional)
+-  JPEG2000 (wavelet-based)
+-  BPG (HEVC-based)
+-  VVC (latest video codec)
 
 ### Quality Distribution
 - **89% of images** achieve PSNR > 34dB
@@ -278,7 +277,7 @@ Our model achieves **superior rate-distortion trade-offs** compared to:
 
 ---
 
-## 🔬 Technical Details
+##  Technical Details
 
 ### Key Innovations
 
@@ -327,6 +326,6 @@ L_PQF: Post-quantization filter loss
 
 λ_PQF: PQF weight (5.0 early epochs, 0.0 later)
 
-## ⭐ Star History
+##  Request
 
-If you find this project useful, please consider giving it a star! ⭐
+If you find this project useful, please consider giving it a star! 
